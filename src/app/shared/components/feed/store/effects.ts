@@ -1,7 +1,6 @@
 import { inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { FeedService } from '../services/feed.service';
-import { PersistenceService } from 'src/app/shared/services/persistence.service';
 import { GetFeedResponseInterface } from '../types/getFeedResponse.interface';
 import { feedActions } from './actions';
 import { catchError, map, of, switchMap } from 'rxjs';
