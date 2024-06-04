@@ -14,9 +14,9 @@ export const getPopularTagsEffect = createEffect(
       ofType(popularTagsActions.getPopularTags),
       switchMap(({ url }) => {
         return popularTagsService.getPopularTags(url).pipe(
-          map((tags: GetPopularTagsResponseInterface) => {
-            console.log(tags);
-            return popularTagsActions.getPopularTagsSuccess({ tags });
+          map((popularTags: GetPopularTagsResponseInterface) => {
+            console.log(popularTags);
+            return popularTagsActions.getPopularTagsSuccess({ popularTags });
           }),
           catchError(() => {
             return of(popularTagsActions.getPopularTagsFailure());

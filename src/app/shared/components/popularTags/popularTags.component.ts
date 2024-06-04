@@ -2,10 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { combineLatest } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ErrorMessageComponent } from '../errorMessage/errorMessage.component';
 import { LoadingComponent } from '../loading/loading.component';
-import { environment } from 'src/environments/environment';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { TagListComponent } from '../tagList/tagList.component';
 import { popularTagsActions } from './store/actions';
@@ -40,10 +39,8 @@ export class PopularTagsComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    console.log('toto');
     this.store.dispatch(
       popularTagsActions.getPopularTags({ url: this.popularTagsUrl })
     );
-    console.log('titi');
   }
 }

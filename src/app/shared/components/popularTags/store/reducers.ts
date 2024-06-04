@@ -20,13 +20,12 @@ const popularTagsFeature = createFeature({
     on(popularTagsActions.getPopularTagsSuccess, (state, action) => ({
       ...state,
       isLoading: false,
-      data: action.tags,
+      data: action.popularTags,
     })),
     on(popularTagsActions.getPopularTagsFailure, (state) => ({
       ...state,
       isLoading: false,
-    })),
-    on(routerNavigationAction, () => initialState)
+    }))
   ),
 });
 

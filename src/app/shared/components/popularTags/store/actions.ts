@@ -6,7 +6,7 @@ export const popularTagsActions = createActionGroup({
   events: {
     'Get popular tags': props<{ url: string }>(),
     'Get popular tags success': props<{
-      tags: GetPopularTagsResponseInterface;
+      popularTags: GetPopularTagsResponseInterface;
     }>(),
     'Get popular tags failure': emptyProps(),
   },
