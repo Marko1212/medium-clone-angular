@@ -28,8 +28,6 @@ import {
   ],
 })
 export class PopularTagsComponent implements OnInit {
-  popularTagsUrl = '/tags';
-
   data$ = combineLatest({
     isLoading: this.store.select(selectIsLoading),
     error: this.store.select(selectError),
