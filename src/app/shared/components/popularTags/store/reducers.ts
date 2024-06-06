@@ -1,7 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { PopularTagsStateInterface } from '../types/popularTagsState.interface';
 import { popularTagsActions } from './actions';
-import { routerNavigationAction } from '@ngrx/router-store';
 
 const initialState: PopularTagsStateInterface = {
   isLoading: false,

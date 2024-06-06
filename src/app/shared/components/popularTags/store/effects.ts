@@ -1,9 +1,9 @@
 import { inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { PopularTagsService } from '../services/popularTags.service';
-import { GetPopularTagsResponseInterface } from '../types/getPopularTagsResponse.interface';
 import { popularTagsActions } from './actions';
 import { catchError, map, of, switchMap } from 'rxjs';
+import { PopularTagType } from 'src/app/shared/types/popularTag.type';
 
 export const getPopularTagsEffect = createEffect(
   (
@@ -12,10 +12,9 @@ export const getPopularTagsEffect = createEffect(
   ) => {
     return actions$.pipe(
       ofType(popularTagsActions.getPopularTags),
-      switchMap(({ url }) => {
-        return popularTagsService.getPopularTags(url).pipe(
-          map((popularTags: GetPopularTagsResponseInterface) => {
-            console.log(popularTags);
+      switchMap(() => {
+        return popularTagsService.getPopularTags().pipe(
+          map((popularTags: PopularTagType[]) => {
             return popularTagsActions.getPopularTagsSuccess({ popularTags });
           }),
           catchError(() => {

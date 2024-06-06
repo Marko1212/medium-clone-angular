@@ -17,5 +17,4 @@ import { PopularTagsComponent } from 'src/app/shared/components/popularTags/popu
 })
 export class GlobalFeedComponent {
   apiUrl = '/articles';
-  popularTagsUrl = '/tags';
 }

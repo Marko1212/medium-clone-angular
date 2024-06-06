@@ -28,7 +28,7 @@ import {
   ],
 })
 export class PopularTagsComponent implements OnInit {
-  @Input() popularTagsUrl: string = '';
+  popularTagsUrl = '/tags';
 
   data$ = combineLatest({
     isLoading: this.store.select(selectIsLoading),
@@ -39,8 +39,6 @@ export class PopularTagsComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(
-      popularTagsActions.getPopularTags({ url: this.popularTagsUrl })
-    );
+    this.store.dispatch(popularTagsActions.getPopularTags());
   }
 }
