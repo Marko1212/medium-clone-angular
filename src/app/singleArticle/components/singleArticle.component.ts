@@ -18,6 +18,7 @@ import { TagListComponent } from 'src/app/shared/components/tagList/tagList.comp
 @Component({
   selector: 'mc-single-article',
   templateUrl: './singleArticle.component.html',
+  styleUrls: ['./singleArticle.component.css'],
   standalone: true,
   imports: [
     CommonModule,

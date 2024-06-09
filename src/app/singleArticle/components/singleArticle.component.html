@@ -12,7 +12,7 @@
               [routerLink]="['/profile', data.singleArticle.author.username]"
               >{{ data.singleArticle.author.username }}</a
             >
-            <span class="data">{{ data.singleArticle.createdAt }}</span>
+            <span class="data ml-5">{{ data.singleArticle.createdAt }}</span>
           </div>
           <span *ngIf="data.isAuthor">
             <a
@@ -22,7 +22,7 @@
               <i class="ion-edit"></i>
               Edit Article
             </a>
-            <button class="btn btn-outline-danger btn-sm">
+            <button class="btn btn-outline-danger btn-sm ml-5">
               Delete Article
             </button>
           </span>
