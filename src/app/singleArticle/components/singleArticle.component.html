@@ -1,1 +1,45 @@
-<h1>SINGLE ARTICLE</h1>
+<ng-container *ngIf="data$ | async as data">
+  <div class="article-page">
+    <div class="banner">
+      <div class="container" *ngIf="data.singleArticle">
+        <h1>{{ data.singleArticle.title }}</h1>
+        <div class="article-meta">
+          <a [routerLink]="['/profile', data.singleArticle.author.username]"
+            ><img [src]="data.singleArticle.author.image" alt="author image"
+          /></a>
+          <div class="info">
+            <a
+              [routerLink]="['/profile', data.singleArticle.author.username]"
+              >{{ data.singleArticle.author.username }}</a
+            >
+            <span class="data">{{ data.singleArticle.createdAt }}</span>
+          </div>
+          <span *ngIf="data.isAuthor">
+            <a
+              [routerLink]="['/article', data.singleArticle.slug, 'edit']"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              <i class="ion-edit"></i>
+              Edit Article
+            </a>
+            <button class="btn btn-outline-danger btn-sm">
+              Delete Article
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="container page">
+      <mc-loading *ngIf="data.isLoading"></mc-loading>
+      <mc-error-message *ngIf="data.error"></mc-error-message>
+      <div class="row article-content" *ngIf="data.singleArticle">
+        <div class="col-xs-12">
+          <div>
+            <p>{{ data.singleArticle.body }}</p>
+          </div>
+          <mc-tag-list [tags]="data.singleArticle.tagList"></mc-tag-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
