@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { ArticleResponseInterface } from '../types/getSingleArticleResponse.interface';
+import { ArticleResponseInterface } from '../types/articleResponse.interface';
 import { ArticleInterface } from 'src/app/shared/types/article.interface';
 import { environment } from 'src/environments/environment';
 

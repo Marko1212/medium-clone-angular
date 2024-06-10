@@ -7,6 +7,7 @@ import {
   singleArticleFeatureKey,
   singleArticleReducer,
 } from './store/reducers';
+import { DeleteArticleService } from './services/deleteArticle.service';
 
 export const routes: Route[] = [
   {
@@ -15,6 +16,7 @@ export const routes: Route[] = [
     providers: [
       provideEffects(singleArticleEffects),
       provideState(singleArticleFeatureKey, singleArticleReducer),
+      DeleteArticleService,
     ],
   },
 ];

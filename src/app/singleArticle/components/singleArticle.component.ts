@@ -64,4 +64,10 @@ export class SingleArticleComponent implements OnInit {
       );
     });
   }
+
+  deleteArticle(): void {
+    this.store.dispatch(
+      singleArticleActions.deleteArticle({ slug: this.slug })
+    );
+  }
 }
