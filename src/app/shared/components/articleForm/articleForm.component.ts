@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'mc-create-article',
+  selector: 'mc-article-form',
   templateUrl: './articleForm.component.html',
   standalone: true,
 })
