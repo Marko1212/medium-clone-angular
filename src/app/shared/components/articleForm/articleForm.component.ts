@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ArticleFormValuesInterface } from './types/articleFormValues.interface';
 import { BackendErrorsInterface } from '../../types/backendErrors.interface';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mc-article-form',
@@ -13,4 +14,13 @@ export class ArticleFormComponent {
   @Input() errors: BackendErrorsInterface | null = null;
 
   @Output() articlesSubmit = new EventEmitter<ArticleFormValuesInterface>();
+
+  form = this.fb.nonNullable.group({
+    title: '',
+    description: '',
+    body: '',
+    tagList: '',
+  });
+
+  constructor(private fb: FormBuilder) {}
 }
