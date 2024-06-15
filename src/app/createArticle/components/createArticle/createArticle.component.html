@@ -1,1 +1,8 @@
-Create article
+<ng-container *ngIf="data$ | async as data">
+  <mc-article-form
+    [initialValues]="initialValues"
+    [isSubmitting]="data.isSubmitting"
+    [errors]="data.backendErrors"
+    (articlesSubmit)="onSubmit($event)"
+  ></mc-article-form>
+</ng-container>
