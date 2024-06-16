@@ -22,6 +22,7 @@ export const createArticleEffect = createEffect(
             });
           }),
           catchError((errorResponse: HttpErrorResponse) => {
+            console.log(errorResponse);
             return of(
               createArticleActions.createArticleFailure({
                 errors: errorResponse.error.errors,

@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BackendErrorsInterface } from '../../types/backendErrors.interface';
 import { CommonModule } from '@angular/common';
 
@@ -8,13 +14,22 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
 })
-export class BackendErrorMessages implements OnInit {
+export class BackendErrorMessages implements OnInit, OnChanges {
   @Input() backendErrors: BackendErrorsInterface = {};
 
   errorMessages: string[] = [];
 
   ngOnInit(): void {
+    this.setErrorMessage();
+  }
+
+  ngOnChanges(_changes: SimpleChanges): void {
+    this.setErrorMessage();
+  }
+
+  setErrorMessage(): void {
     this.errorMessages = Object.keys(this.backendErrors).map((name: string) => {
+      console.log(this.backendErrors[name]);
       const messages = this.backendErrors[name].join(' ');
       return `${name} ${messages}`;
     });
