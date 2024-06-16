@@ -40,4 +40,9 @@ export const appRoutes: Route[] = [
         (m) => m.routes
       ),
   },
+  {
+    path: 'article/:slug/edit',
+    loadChildren: () =>
+      import('src/app/editArticle/editArticle.routes').then((m) => m.routes),
+  },
 ];
