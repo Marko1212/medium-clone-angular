@@ -29,7 +29,6 @@ export class BackendErrorMessages implements OnInit, OnChanges {
 
   setErrorMessage(): void {
     this.errorMessages = Object.keys(this.backendErrors).map((name: string) => {
-      console.log(this.backendErrors[name]);
       const messages = this.backendErrors[name].join(' ');
       return `${name} ${messages}`;
     });
