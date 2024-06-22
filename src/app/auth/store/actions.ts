@@ -4,6 +4,8 @@ import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 import { LoginRequestInterface } from '../types/loginRequest.interface';
 import { CurrentUserRequestInterface } from 'src/app/shared/types/currentUserRequest.interface';
+import { empty } from 'rxjs';
+import { EMPTY_SUBSCRIPTION } from 'rxjs/internal/Subscription';
 
 export const authActions = createActionGroup({
   source: 'auth',
@@ -27,6 +29,7 @@ export const authActions = createActionGroup({
       currentUser: CurrentUserInterface;
     }>(),
     'Update current user failure': props<{ errors: BackendErrorsInterface }>(),
+    Logout: emptyProps(),
   },
 });
 
