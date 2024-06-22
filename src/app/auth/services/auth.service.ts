@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
 import { AuthResponseInterface } from '../types/authResponse.interface';
 import { environment } from 'src/environments/environment';
 import { LoginRequestInterface } from '../types/loginRequest.interface';
-import { currentUserRequestInterface } from 'src/app/shared/types/currentUserRequest.interface';
+import { CurrentUserRequestInterface } from 'src/app/shared/types/currentUserRequest.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   updateCurrentUser(
-    currentUserRequest: currentUserRequestInterface
+    currentUserRequest: CurrentUserRequestInterface
   ): Observable<CurrentUserInterface> {
     const url = `${environment.apiUrl}/user`;
 
