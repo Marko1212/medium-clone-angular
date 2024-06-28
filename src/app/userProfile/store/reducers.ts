@@ -17,7 +17,7 @@ const userProfileFeature = createFeature({
       ...state,
       isLoading: true,
     })),
-    on(singleArticleActions.getUserProfileSuccess, (state, action) => ({
+    on(userProfileActions.getUserProfileSuccess, (state, action) => ({
       ...state,
       isLoading: false,
       data: action.userProfile,
