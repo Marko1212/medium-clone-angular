@@ -76,6 +76,6 @@ export class UserProfileComponent implements OnInit {
     const isFavorites = this.router.url.includes('favorites');
     return isFavorites
       ? `/articles?favorited=${this.slug}`
-      : `/articles/author=${this.slug}`;
+      : `/articles?author=${this.slug}`;
   }
 }
