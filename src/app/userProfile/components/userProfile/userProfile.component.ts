@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   ActivatedRoute,
   Params,
@@ -28,6 +28,10 @@ import { FeedComponent } from 'src/app/shared/components/feed/feed.component';
 })
 export class UserProfileComponent implements OnInit {
   slug: string = '';
+  route = inject(ActivatedRoute);
+  store = inject(Store);
+  router = inject(Router);
+
   isCurrentUserProfile$ = combineLatest({
     currentUser: this.store.pipe(
       select(selectCurrentUser),
@@ -55,11 +59,11 @@ export class UserProfileComponent implements OnInit {
     isCurrentUserProfile: this.isCurrentUserProfile$,
   });
 
-  constructor(
+  /*   constructor(
     private route: ActivatedRoute,
     private store: Store,
     private router: Router
-  ) {}
+  ) {} */
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
