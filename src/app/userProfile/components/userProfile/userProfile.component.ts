@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, computed, inject } from '@angular/core';
 import {
   ActivatedRoute,
   Params,
@@ -60,6 +60,7 @@ export class UserProfileComponent implements OnInit {
   });
 
   isLoading = this.store.selectSignal(selectIsLoading);
+  foo = computed(() => this.isLoading() ? 'true' : 'false');
 
   /*   constructor(
     private route: ActivatedRoute,
