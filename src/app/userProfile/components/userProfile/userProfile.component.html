@@ -31,7 +31,7 @@
             <ul class="nav nav-pills outline-active">
               <li class="nav-item">
                 <a
-                  [routerLink]="['/profiles', data.userProfile.username]"
+                  [routerLink]="['/profile', data.userProfile.username]"
                   class="nav-link"
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"
@@ -41,7 +41,7 @@
               <li class="nav-item">
                 <a
                   [routerLink]="[
-                    '/profiles',
+                    '/profile',
                     data.userProfile.username,
                     'favorites'
                   ]"

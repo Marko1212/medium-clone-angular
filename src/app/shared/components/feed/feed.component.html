@@ -8,11 +8,11 @@
   <div *ngIf="data.feed">
     <div class="article-preview" *ngFor="let article of data.feed.articles">
       <div class="article-meta">
-        <a [routerLink]="['profiles', article.author.username]">
+        <a [routerLink]="['profile', article.author.username]">
           <img [src]="article.author.image" alt="Author image" />
         </a>
         <div class="info">
-          <a [routerLink]="['/profiles', article.author.username]">
+          <a [routerLink]="['/profile', article.author.username]">
             {{ article.author.username }}</a
           >
           <span class="date">{{ article.createdAt }}</span>
