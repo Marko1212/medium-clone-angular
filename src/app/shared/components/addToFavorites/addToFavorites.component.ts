@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { AddToFavoritesService } from './services/addToFavorites.service';
 import { Store } from '@ngrx/store';
 import { addToFavoritesActions } from './store/actions';
 

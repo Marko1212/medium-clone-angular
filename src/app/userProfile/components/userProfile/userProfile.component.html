@@ -13,7 +13,7 @@
             <h4>{{ data.userProfile.username }}</h4>
             <p>{{ data.userProfile.bio }}</p>
             <div>
-              FOLLOW USER BUTTON
+              <mc-follow-user *ngIf="!data.isCurrentUserProfile" [username] = "data.userProfile.username" [isFollowed]="data.userProfile.following"></mc-follow-user>
               <a
                 *ngIf="data.isCurrentUserProfile"
                 class="btn btn-sm btn-outline-secondary action-btn"

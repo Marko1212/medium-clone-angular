@@ -19,12 +19,13 @@ import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface
 import { UserProfileInterface } from '../../types/userProfile.interface';
 import { CommonModule } from '@angular/common';
 import { FeedComponent } from 'src/app/shared/components/feed/feed.component';
+import { FollowUserComponent } from 'src/app/shared/components/followUser/followUser.component';
 
 @Component({
   selector: 'mc-user-profile',
   templateUrl: './userProfile.component.html',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, FeedComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, FeedComponent, FollowUserComponent],
 })
 export class UserProfileComponent implements OnInit {
   slug: string = '';
