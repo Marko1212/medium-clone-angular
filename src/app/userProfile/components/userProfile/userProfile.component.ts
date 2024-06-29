@@ -59,6 +59,8 @@ export class UserProfileComponent implements OnInit {
     isCurrentUserProfile: this.isCurrentUserProfile$,
   });
 
+  isLoading = this.store.selectSignal(selectIsLoading);
+
   /*   constructor(
     private route: ActivatedRoute,
     private store: Store,
