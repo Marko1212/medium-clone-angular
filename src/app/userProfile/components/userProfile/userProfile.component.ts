@@ -25,7 +25,13 @@ import { FollowUserComponent } from 'src/app/shared/components/followUser/follow
   selector: 'mc-user-profile',
   templateUrl: './userProfile.component.html',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, FeedComponent, FollowUserComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    RouterLinkActive,
+    FeedComponent,
+    FollowUserComponent,
+  ],
 })
 export class UserProfileComponent implements OnInit {
   slug: string = '';
@@ -61,7 +67,7 @@ export class UserProfileComponent implements OnInit {
   });
 
   isLoading = this.store.selectSignal(selectIsLoading);
-  foo = computed(() => this.isLoading() ? 'true' : 'false');
+  foo = computed(() => (this.isLoading() ? 'true' : 'false'));
 
   /*   constructor(
     private route: ActivatedRoute,
